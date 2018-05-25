@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-controller="addressController" ng-app="myApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<title>新增服务地址</title>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #999999;"></a>
+			<h1 class="mui-title">新增服务地址</h1>
+		</header>
+		<div class="mui-content">
+			<p style="margin-top: 10px;margin-left: 10px;color: #000000;font-size: 13px;">为了更好地为您服务,请填写服务地址与联系方式</p>
+			<div class="mui-scroll">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" id="selectCity">
+						<img src="../drawable/appointment_address_icon.png" class="mui-media-object mui-pull-left usericon usericonli">
+						<input class="mui-input-row" type="" placeholder="选择城市" style="border:0;" id="curCity"/>
+							
+					</li>
+					<li class="mui-table-view-cell">
+						<img src="../drawable/appointment_address_icon.png" class="mui-media-object mui-pull-left usericon usericonli">
+						<input class="mui-input-row" type="" placeholder="搜索您的小区或大厦、街道名称" style="border:0;"/>
+							
+					</li>
+					<li class="mui-table-view-cell">
+						<img src="../drawable/appointment_thedoornamber.png" class="mui-media-object mui-pull-left usericon usericonli">
+						<input class="mui-input-row" type="" placeholder="请填写您的具体地址" style="border:0;"/>
+							
+					</li>
+					<li class="mui-table-view-cell">
+						<img src="../drawable/username.png" class="mui-media-object mui-pull-left usericon usericonli">
+						<input class="mui-input-row" type="" placeholder="请填写您的称呼" style="border:0;"/>
+							
+					</li>
+					<li class="mui-table-view-cell">
+						<img src="../drawable/phone.png" class="mui-media-object mui-pull-left usericon usericonli">
+						<input class="mui-input-row" type="" placeholder="请填写您的联系方式" style="border:0;"/>
+							
+					</li>
+					<li class="mui-table-view-cell">
+						设为默认地址
+		                <div id="waiter" class="mui-switch">
+		                    <div class="mui-switch-handle"></div>
+		                </div>
+		            </li>
+				</ul>
+			</div>
+			<div class="footer">
+				<button class="mui-btn-block mui-btn-warning">确定</button>
+			</div>
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/angular.min.js" ></script>
+	<script type="text/javascript" src="../js/angular-resource.js" ></script>
+	<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
+	<script type="text/javascript" src="../controler/addAddressCtrl.js" ></script>
+
+</html>

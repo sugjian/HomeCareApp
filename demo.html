@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name"viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>demo</title>
+	</head>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		
+		body {
+			height: 100%;
+			overflow: hidden;
+			font-size: 14px;
+			line-height: 2;
+			position: relative;
+		}
+		
+		html {
+			height: 100%;
+			overflow: hidden;
+		}
+		
+		.fixed {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			width: 50px;
+			height: 100%;
+		}
+		
+		.fixed li {
+			list-style: none;
+			text-align: center;
+			border-left: 1px solid #f60;
+		}
+		
+		.wrapper {
+			height: 100%;
+			overflow: auto;
+		}
+		
+		.body {
+			padding-top: 10px;
+			margin-left: 132px;
+		}
+	</style>
+
+	<body>
+		<div class="fixed">
+			<li>
+				<a href="#one">商品体验类</a>
+			</li>
+			<li>
+				<a href="#two">生活服务类</a>
+			</li>
+			<li>
+				<a href="#three">健康保健类</a>
+			</li>
+			<li>
+				<a href="#four">便民服务</a>
+			</li>
+		</div>
+		<div class="wrapper">
+			<div class="body">
+				<li>
+					<a id="one" href="" target="_blank">显示内容1</a>
+				</li>
+				<li>
+					<a id="two" href="" target="_blank">显示内容2</a>
+				</li>
+				<li>
+					<a id="three" href="" target="_blank">显示内容3</a>
+				</li>
+				<li>
+					<a id="four" href="" target="_blank">显示内容4</a>
+				</li>
+			</div>
+		</div>
+	</body>
+
+</html>

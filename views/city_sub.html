@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/style.css" rel="stylesheet" />
+		<style type="text/css">
+			
+			html,
+			body,
+			div,
+			span,
+			applet,
+			object,
+			iframe,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p,
+			blockquote,
+			pre,
+			a,
+			abbr,
+			acronym,
+			address,
+			big,
+			cite,
+			code,
+			del,
+			dfn,
+			em,
+			img,
+			ins,
+			kbd,
+			q,
+			s,
+			samp,
+			small,
+			strike,
+			strong,
+			sub,
+			sup,
+			tt,
+			var,
+			b,
+			u,
+			i,
+			center,
+			dl,
+			dt,
+			dd,
+			ol,
+			ul,
+			li,
+			fieldset,
+			form,
+			label,
+			legend,
+			table,
+			caption,
+			tbody,
+			tfoot,
+			thead,
+			tr,
+			th,
+			td,
+			article,
+			aside,
+			canvas,
+			details,
+			embed,
+			figure,
+			figcaption,
+			footer,
+			header,
+			menu,
+			nav,
+			output,
+			ruby,
+			section,
+			summary,
+			time,
+			mark,
+			audio,
+			video,
+			input {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				vertical-align: baseline;
+			}
+			/* HTML5 display-role reset for older browsers */
+			
+			article,
+			aside,
+			details,
+			figcaption,
+			figure,
+			footer,
+			header,
+			menu,
+			nav,
+			section {
+				display: block;
+			}
+			
+			body {
+				line-height: 1;
+			}
+			
+			blockquote,
+			q {
+				quotes: none;
+			}
+			
+			blockquote:before,
+			blockquote:after,
+			q:before,
+			q:after {
+				content: none;
+			}
+			
+			table {
+				border-collapse: collapse;
+				border-spacing: 0;
+			}
+			/* custom */
+			
+			a {
+				color: #7e8c8d;
+				-webkit-backface-visibility: hidden;
+			}
+			
+			::-webkit-scrollbar {
+				width: 5px;
+				height: 5px;
+			}
+			
+			::-webkit-scrollbar-track-piece {
+				background-color: rgba(0, 0, 0, 0.2);
+				-webkit-border-radius: 6px;
+			}
+			
+			::-webkit-scrollbar-thumb:vertical {
+				height: 5px;
+				background-color: rgba(125, 125, 125, 0.7);
+				-webkit-border-radius: 6px;
+			}
+			
+			::-webkit-scrollbar-thumb:horizontal {
+				width: 5px;
+				background-color: rgba(125, 125, 125, 0.7);
+				-webkit-border-radius: 6px;
+			}
+			
+			html,
+			body {
+				font-size: 62.5%;
+				width: 100%;
+				/*height: 100%;*/
+				font-family: 'Microsoft YaHei', arial, sans-serif;
+			}
+			
+			body {
+				-webkit-text-size-adjust: none;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+				background: #fff;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			.search-wrap {
+				background: #dfdfdf;
+				padding: 8px 10px;
+				position: relative;
+				z-index: 9999;
+			}
+			
+			.mui-search input {
+				margin-bottom: 0;
+				background: #FFF;
+			}
+			
+			.mui-search:before {
+				margin-top: -10px !important;
+			}
+			
+			.mui-backdrop {
+				position: fixed;
+				top: 49px;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 998;
+				background-color: rgba(0, 0, 0, .3);
+			}
+			
+			.mui-scroll-wrapper {
+				top: 49px;
+				z-index: 999;
+				background: #FFF;
+				display: none;
+			}
+			
+			.searchCancel {
+				position: absolute;
+				right: 0;
+				top: 0;
+				color: #555;
+				width: auto !important;
+				padding: 10px 8px !important;
+				;
+			}
+			
+			.pr50 {
+				padding-right: 50px;
+				;
+			}
+			
+			.pr50 .mui-input-clear~.mui-icon-clear {
+				right: 55px;
+				;
+			}
+			.mui-table-view-cell{
+				font-size: 14px;;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="../css/city.css">
+		<script type="text/javascript" src="../js/fastclick.js"></script>
+		<script type="text/javascript">
+			if('addEventListener' in document) {
+				document.addEventListener('DOMContentLoaded', function() {
+					FastClick.attach(document.body);
+				}, false);
+			}
+		</script>
+	</head>
+
+	<body ng-controller="cityController">
+		<div class="mui-content">
+			<div class="search-wrap">
+				<div class="mui-input-row mui-search" ng-class="{'pr50':searchStatus}">
+					<input type="search" class="mui-input-clear searchIpt" placeholder="输入城市名或拼音">
+					<a ng-show="searchStatus" href="javascript:;" class="searchCancel mui-btn mui-btn-link" ng-bind="cancelText"></a>
+				</div>
+			</div>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell" ng-repeat="item in searchResult track by $index" data-name="item.name" data-id="m.cityid" ng-click="selectCity(item)">
+							<a class="mui-navigate-right">
+								{{item.name}}
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="city">
+				<div class="city-wrapper city-wrapper-hook">
+					<div class="scroller-hook">
+						<div class="cities cities-hook"></div>
+					</div>
+					<div class="shortcut shortcut-hook"></div>
+				</div>
+			</div>
+
+			<script src="../js/bscroll.min.js"></script>
+			<script src="../js/city.js"></script>
+			<script src="../js/mui.min.js"></script>
+			<script src="../js/angular.min.js"></script>
+			<script src="../js/angular-resource.js"></script>
+
+			<script src="../js/angular-local-storage.min.js"></script>
+			<script src="../js/cityCtrl.js"></script>
+			<script>
+				
+			</script>
+	</body>
+
+</html>

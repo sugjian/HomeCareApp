@@ -1,0 +1,45 @@
+{
+	"views/choice-address.html": {
+		"refer": [
+			"views/manageAddress.html",
+			"views/order.html"
+		]
+	},
+	"index.html": {
+		"refer": [
+			"views/order.html"
+		]
+	},
+	"views/order.html": {
+		"refer": [
+			"views/choice-address.html",
+			"views/detail.html",
+			"index.html"
+		]
+	},
+	"views/manageAddress.html": {
+		"refer": [
+			"views/addAddress.html",
+			"views/choice-address.html"
+		]
+	},
+	"views/city.html": {
+		"resources": [
+			"views/city_sub.html"
+		],
+		"refer": [
+			"views/city_sub.html"
+		]
+	},
+	"views/addAddress.html": {
+		"refer": [
+			"views/city.html",
+			"views/manageAddress.html"
+		]
+	},
+	"views/detail.html": {
+		"refer": [
+			"views/order.html"
+		]
+	}
+}

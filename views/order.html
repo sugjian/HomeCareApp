@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<title></title>
+	</head>
+	<style>
+		.btn{
+			position: 'fixed',
+            bottom: 0;
+		}
+		.iiimg{
+			background: url(../drawable/address_bg.png);
+			background-size: 100% 44px;
+		}
+		.imgW{
+			width: 25px;
+			height: 25px;
+		}
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #999999;"></a>
+			<h1 class="mui-title"></h1>
+			<a class="mui-icon mui-icon-right-nav mui-pull-right"></a>
+		</header>
+		<div class="mui-content" ng-app="myApp" ng-controller="myCtrl">
+			<div class="mui-scroll">
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell iiimg">
+						<a href="choice-address.html" class="mui-navigate-right"><img src="../drawable/appointment_address_icon.png" class="mui-media-object mui-pull-left usericon usericonli">请选择服务地点</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell userlist">
+						<a href="detail.html" class="mui-navigate-right">服务简介</a>
+					</li>
+					<li class="mui-table-view-cell userlist">
+						<img src="../drawable/appointment_time_price.png" class="mui-media-object mui-pull-left usericon usericonli">服务站点<span class="mui-badge mui-badge-inverted">机构中心站点</span>
+					</li>
+					<li class="mui-table-view-cell userlist">
+						<img src="../drawable/appointment_time_price.png" class="mui-media-object mui-pull-left usericon usericonli">单价<span class="mui-badge mui-badge-inverted"><span style="color: red;">￥{{price*count}}</span>元/次</span>
+					</li>
+					<li class="mui-table-view-cell userlist">
+						<img src="../drawable/appointment_time_icon.png" class="mui-media-object mui-pull-left usericon usericonli">服务数量
+						<span style="float: right;margin-right: -38px;">
+							<img src="../drawable/minus.png" style="vertical-align: middle;" width="25px"  ng-click="decr()"/>
+							<span style="padding: 5px;">{{ count }}</span>
+						<img src="../drawable/plus.png" style="vertical-align: middle;" width="25" ng-click="incr()"/>
+						</span>
+					</li>
+					<li class="mui-table-view-cell userlist">
+						<img src="../drawable/tabbar_my_nor.png" class="mui-media-object mui-pull-left usericon usericonli">自动分配服务人员
+		                <div id="waiter" class="mui-switch mui-active">
+		                    <div class="mui-switch-handle"></div>
+		                </div>
+		            </li>
+					<li class="mui-table-view-cell userlist">
+						<a href="choice-time.html" class="mui-navigate-right"><img src="../drawable/appointment_time_icon.png" class="mui-media-object mui-pull-left usericon usericonli">请选择预约时间</a>
+					</li>
+					<li class="mui-table-view-cell userlist">
+						<img src="../drawable/edit.png" class="mui-media-object mui-pull-left usericon usericonli">
+						<input class="mui-input-row" placeholder="添加备注" style="border:0;"/>
+					</li>
+				</ul>
+			</div>
+			<div class="footer">
+				<button class="mui-btn-block mui-btn-warning">预约服务</button>
+			</div>
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/angular.min.js" ></script>
+	<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		window.addEventListener('toggle', function(event) {
+			if (event.target.id === 'waiter') {
+				var isActive = event.detail.isActive;
+				if (isActive) {
+					
+				} else {
+					
+				}
+			}
+		});
+		var app = angular.module('myApp', []);
+	    app.controller('myCtrl', function($scope) {
+	        $scope.price = 1.00;
+	        $scope.count = 1;
+	        $scope.incr=function(){
+            this.count += 1;
+	        }
+	        $scope.decr=function(){
+	            //只有大于一的时候才减
+	            if(this.count>1){
+	                this.count -= 1;
+	            }
+	        }
+	    });
+	</script>
+
+</html>

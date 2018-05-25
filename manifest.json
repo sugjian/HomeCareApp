@@ -1,0 +1,537 @@
+{
+	"@platforms": ["android", "iPhone", "iPad"],
+	"id": "H50C31A37",/*应用的标识，创建应用时自动生成，勿手动修改*/
+	"name": "HomeCareApp",/*应用名称，程序桌面图标名称*/
+	"version": {
+		"name": "1.0.0",/*应用版本名称*/
+		"code": "83"
+	},
+	"description": "",/*应用描述信息*/
+	"icons": {
+		"72": "icon.png"
+	},
+	"launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"developer": {
+		"name": "",/*开发者名称*/
+		"email": "",/*开发者邮箱地址*/
+		"url": "http://www.dcloud.io"
+	},
+	"permissions": {
+        "Cache": {
+            "description": "管理应用缓存"
+        },
+        "Console": {
+            "description": "跟踪调试输出日志"
+        },
+        "Contacts": {
+            "description": "访问系统联系人信息"
+        },
+        "Events": {
+            "description": "应用扩展事件"
+        },
+        "Messaging": {
+            "description": "访问通讯能力"
+        },
+        "Maps": {
+            "description": "管理地图插件"
+        },
+        "Speech": {
+            "description": "管理语音识别插件"
+        }
+	},
+	"plus": {
+		"splashscreen": {
+			"autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
+			"waiting": true
+		},
+		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
+		"distribute": {
+			"apple": {
+				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
+				"mobileprovision": "",/*iOS应用打包配置文件*/
+				"password": "",/*iOS应用打包个人证书导入密码*/
+				"p12": "",/*iOS应用打包个人证书，打包配置文件关联的个人证书*/
+				"devices": "universal",/*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
+				"frameworks": []
+			},
+			"google": {
+				"packagename": "",/*Android应用包名，如io.dcloud.HelloH5*/
+				"keystore": "",/*Android应用打包使用的密钥库文件*/
+				"password": "",/*Android应用打包使用密钥库中证书的密码*/
+				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
+				"permissions": ["<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"]
+			},
+			"orientation": ["portrait-primary", "portrait-secondary"],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+			"icons": {
+				"ios": {
+					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
+					"auto": "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+					"iphone": {
+						"normal": "",/*iPhone普通屏幕程序图标，分辨率：57x57*/
+						"retina": "",/*iPhone高分屏程序图标，分辨率：114x114*/
+						"retina7": "",/*iPhone iOS7高分屏程序图标，分辨率：120x120*/
+						"spotlight-normal": "", /*iPhone Spotlight搜索程序图标，分辨率：29x29*/
+						"spotlight-retina": "", /*iPhone高分屏Spotlight搜索程序图标，分辨率：58x58*/
+						"spotlight-retina7": "",/*iPhone iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "", /*iPhone设置页面程序图标，分辨率：29x29*/
+						"settings-retina": ""
+					},
+					"ipad": {
+						"normal": "", /*iPad普通屏幕程序图标，分辨率：72x72*/
+						"retina": "", /*iPad高分屏程序图标，分辨率：144x144*/
+						"normal7": "", /*iPad iOS7程序图标，分辨率：76x76*/
+						"retina7": "", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
+						"spotlight-normal": "", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+						"spotlight-retina": "", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
+						"spotlight-normal7": "",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
+						"spotlight-retina7": "",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "",/*iPad设置页面程序图标，分辨率：29x29*/
+						"settings-retina": ""
+					}
+				},
+				"android": {
+					"mdpi": "", /*普通屏程序图标，分辨率：48x48*/
+					"ldpi": "", /*大屏程序图标，分辨率：48x48*/
+					"hdpi": "", /*高分屏程序图标，分辨率：72x72*/
+					"xhdpi": "",/*720P高分屏程序图标，分辨率：96x96*/
+					"xxhdpi": ""
+				}
+			},
+			"splashscreen": {
+				"ios": {
+					"iphone": {
+						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
+						"retina35": "",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+						"retina40": ""
+					},
+					"ipad": {
+						"portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait-retina": "",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+						"landscape": "", /*iPad横屏启动图片，分辨率：1024x748*/
+						"landscape-retina": "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+						"portrait7": "", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+						"portrait-retina7": "",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+						"landscape7": "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+						"landscape-retina7": ""
+					}
+				},
+				"android": {
+					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
+					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
+					"hdpi": "", /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": ""
+				}
+			}
+		}
+	},
+	"dependencies": {
+		"pages": {
+			"views/choice-address.html": {
+				"resources": [],
+				"refer": [
+					"views/manageAddress.html",
+					"views/order.html"
+				],
+				"priority": 0
+			},
+			"index.html": {
+				"resources": [],
+				"refer": [
+					"views/order.html"
+				],
+				"priority": 0
+			},
+			"views/order.html": {
+				"resources": [],
+				"refer": [
+					"views/choice-address.html",
+					"views/detail.html",
+					"index.html"
+				],
+				"priority": 0
+			},
+			"views/manageAddress.html": {
+				"resources": [],
+				"refer": [
+					"views/addAddress.html",
+					"views/choice-address.html"
+				],
+				"priority": 0
+			},
+			"views/city.html": {
+				"resources": [
+					"views/city_sub.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"views/addAddress.html": {
+				"resources": [],
+				"refer": [
+					"views/city.html",
+					"views/manageAddress.html"
+				],
+				"priority": 0
+			},
+			"views/detail.html": {
+				"resources": [],
+				"refer": [
+					"views/order.html"
+				],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"drawable/shoppingcar.png",
+				"drawable/physical_examination_flow2.png",
+				"drawable/set_icon_add_scanning.png",
+				"drawable/first_icon7.png",
+				"drawable/woman.png",
+				"drawable/collection_sel.png",
+				"drawable/first_icon5.png",
+				"drawable/fg_icon3_normal.png",
+				"drawable/life_icon_temperature.png",
+				"drawable/patrol_button_addpicture.png",
+				"drawable/home_icon_phone_normal.png",
+				"drawable/my_icon8.png",
+				"drawable/progress2.png",
+				"drawable/time.png",
+				"drawable/home_icon_finish_normal.png",
+				"drawable/call_120.png",
+				"drawable/more_service.png",
+				"drawable/my_coupon_list.png",
+				"drawable/hot_goods.png",
+				"drawable/tabbar_active.png",
+				"drawable/failload_people.png",
+				"drawable/life_icon_weight.png",
+				"drawable/tabbar_button_unfinished_selected.png",
+				"drawable/home_chronic_disease.png",
+				"drawable/like_ok.png",
+				"fonts/mui.ttf",
+				"drawable/plus.png",
+				"drawable/my_phone.png",
+				"drawable/first_icon8.png",
+				"drawable/community_service.png",
+				"drawable/hirv.png",
+				"js/angular-resource.js",
+				"drawable/life_icon_shit.png",
+				"drawable/first_photo4.png",
+				"drawable/coupon_list.png",
+				"drawable/leftbar_background.png",
+				"drawable/activity_success.png",
+				"drawable/position.png",
+				"drawable/people_assign.png",
+				"drawable/progress3.png",
+				"drawable/home_measure.png",
+				"drawable/failedload_people.png",
+				"drawable/physical_examination_flow.png",
+				"drawable/my_about.png",
+				"drawable/position_button_history_normal.png",
+				"drawable/gouxuan.png",
+				"drawable/up.png",
+				"js/city.js",
+				"drawable/jiantou.png",
+				"drawable/today_check_finish.png",
+				"drawable/physical_examination_flow4.png",
+				"drawable/but_bg.png",
+				"drawable/toleft.png",
+				"drawable/bg_item_my_coupon.png",
+				"drawable/add_call.png",
+				"drawable/form_004.png",
+				"drawable/serch.png",
+				"drawable/nav_button_unfollow_normal.png",
+				"drawable/nodata_task.png",
+				"drawable/setting_icon2.png",
+				"drawable/address_add.png",
+				"drawable/add_pic.png",
+				"drawable/tabbar_button_taskremind_selected.png",
+				"drawable/zhan.png",
+				"drawable/intelligenthealth.png",
+				"drawable/icon1.png",
+				"drawable/my_icon5.png",
+				"drawable/my_password.png",
+				"drawable/member_heartrate.png",
+				"drawable/member_service.png",
+				"drawable/date_front.png",
+				"drawable/login_button_care_normal.png",
+				"drawable/alpay.png",
+				"drawable/pop_icon_warn.png",
+				"drawable/callservice.png",
+				"drawable/man.png",
+				"drawable/end.png",
+				"controler/addAddressCtrl.js",
+				"drawable/life_icon_pain.png",
+				"drawable/home_service.png",
+				"drawable/button_follow_selected.png",
+				"drawable/physical_examination_flow3.png",
+				"drawable/toright.png",
+				"drawable/plugin_camera_no_pictures.png",
+				"drawable/set_icon_add_confirm.png",
+				"drawable/error.png",
+				"drawable/fabulous.png",
+				"drawable/call_white.png",
+				"drawable/home_icon_position_normal.png",
+				"drawable/my_package.png",
+				"drawable/publish_image.png",
+				"drawable/form_002.png",
+				"drawable/logo.png",
+				"drawable/home_start.png",
+				"drawable/my_qrcode.png",
+				"drawable/home_button_leftbar_normal.png",
+				"drawable/my_password_user.png",
+				"drawable/home_button_search_normal.png",
+				"drawable/my_icon6.png",
+				"drawable/wight_icon_height.png",
+				"drawable/position_button_rescue_normal.png",
+				"drawable/plugin_camera_choose_back.png",
+				"drawable/physicalexamination.png",
+				"drawable/first_photo2.png",
+				"drawable/tabbar_button_unfinished_normal.png",
+				"drawable/my_icon2.png",
+				"drawable/life_icon_breathing.png",
+				"css/city.css",
+				"drawable/failedload_activity.png",
+				"drawable/no_pic.png",
+				"drawable/member_bloodsugar.png",
+				"drawable/home_open.png",
+				"drawable/appointment.png",
+				"js/fastclick.js",
+				"drawable/failedload_services.png",
+				"drawable/login_button_care_selected.png",
+				"drawable/more.png",
+				"drawable/bg_my.png",
+				"drawable/my_advice.png",
+				"drawable/leftbar_icon_phone.png",
+				"drawable/physical_examination_flow1.png",
+				"drawable/my_icon1.png",
+				"drawable/first_icon6.png",
+				"drawable/tabbar_order_selected.png",
+				"drawable/call_110.png",
+				"drawable/setting_icon1.png",
+				"drawable/icon4.png",
+				"drawable/member_back.png",
+				"drawable/tab_minme_button_nor.png",
+				"drawable/discounter.png",
+				"drawable/home_archives.png",
+				"drawable/life_icon_bloodsugar.png",
+				"drawable/yuyuebeij.png",
+				"drawable/selected.png",
+				"drawable/progress4.png",
+				"js/angular.min.js",
+				"drawable/fg_icon3_select.png",
+				"drawable/like.png",
+				"drawable/physical_examination_management.png",
+				"drawable/refund_gray.png",
+				"drawable/tabbar_home_nor.png",
+				"drawable/my_icon9.png",
+				"drawable/statues_001.png",
+				"drawable/flashlight_turn_on.png",
+				"js/jquery-1.11.0.js",
+				"drawable/circular.png",
+				"drawable/my_qa.png",
+				"drawable/refund_yellow.png",
+				"drawable/setting_icon3.png",
+				"drawable/down.png",
+				"drawable/call_people.png",
+				"drawable/login_button_home_selected.png",
+				"drawable/first_photo5.png",
+				"drawable/username.png",
+				"drawable/tab_home_button_nor.png",
+				"drawable/home_button_more_normal.png",
+				"drawable/date_behind.png",
+				"drawable/heart.png",
+				"drawable/tedian.png",
+				"drawable/folte.png",
+				"drawable/star_empty.png",
+				"drawable/fabulous2.png",
+				"drawable/yellow_dinwei.png",
+				"drawable/tab_minme_button_sel.png",
+				"drawable/appointment_time_price.png",
+				"drawable/life_icon_oxygen.png",
+				"drawable/search_clear_pressed.png",
+				"drawable/nav_returned.png",
+				"drawable/pay_vip.png",
+				"drawable/first_icon2.png",
+				"drawable/progress1.png",
+				"drawable/close.png",
+				"drawable/service.png",
+				"drawable/my_icon4.png",
+				"drawable/time_choose.png",
+				"drawable/item_time.png",
+				"drawable/my_reservation.png",
+				"drawable/address.png",
+				"drawable/form_001.png",
+				"drawable/shoppingcat.png",
+				"drawable/first_icon4.png",
+				"drawable/flashlight_turn_off.png",
+				"js/mui.js",
+				"drawable/service_cehua.png",
+				"drawable/pay_banner.png",
+				"drawable/collection_un.png",
+				"drawable/address_bg.png",
+				"drawable/number.png",
+				"drawable/my_icon7.png",
+				"drawable/attention.png",
+				"drawable/my_set_nor.png",
+				"drawable/nav_button_search_normal.png",
+				"drawable/member_archives.png",
+				"drawable/point_select.png",
+				"drawable/fg_icon1_select.png",
+				"drawable/call_add.png",
+				"drawable/scan_white.png",
+				"drawable/home_assessment.png",
+				"drawable/popu_more.png",
+				"drawable/first_icon3.png",
+				"drawable/bg_white.png",
+				"drawable/plugin_camera_choosed.png",
+				"drawable/member_measure.png",
+				"drawable/home_icon_sign_normal.png",
+				"drawable/sms2.png",
+				"drawable/scan.png",
+				"drawable/my_activity.png",
+				"drawable/my_community.png",
+				"drawable/tab_home_button_sel.png",
+				"views/myOrder.html",
+				"drawable/home_close.png",
+				"drawable/nav_button_screen_normal.png",
+				"drawable/my_choose.png",
+				"js/mui.min.js",
+				"drawable/qrcode.png",
+				"drawable/tabbar_my_selected.png",
+				"drawable/nodata.png",
+				"drawable/erweima.png",
+				"drawable/icon2.png",
+				"drawable/time_reminder.png",
+				"drawable/form_003.png",
+				"drawable/phone.png",
+				"drawable/point_normal.png",
+				"drawable/star_full.png",
+				"drawable/search_clear_normal.png",
+				"drawable/my_collection.png",
+				"drawable/telephone.png",
+				"drawable/leftbar_button_ordermanagement_normal.png",
+				"drawable/set_icon_add_photo.png",
+				"drawable/my_feedback.png",
+				"drawable/start.png",
+				"drawable/leftbar_button_modifypassword_normal.png",
+				"css/mui.min.css",
+				"drawable/time_selected.png",
+				"drawable/password.png",
+				"drawable/login_button_home_normal.png",
+				"drawable/voice_call.png",
+				"drawable/first_photo1.png",
+				"drawable/into.png",
+				"drawable/set_button_choose_normal.png",
+				"drawable/home_icn_see.png",
+				"drawable/tab_member_button_sel.png",
+				"drawable/bg_grey.png",
+				"drawable/leftbar_button_memberinformation_normal.png",
+				"drawable/fg_icon2_normal.png",
+				"drawable/home_telephone.png",
+				"drawable/refund_green.png",
+				"drawable/leftbar_button_setting_normal.png",
+				"drawable/home_icon_life.png",
+				"drawable/consultation.png",
+				"drawable/open.png",
+				"drawable/my_achievements.png",
+				"drawable/call_icon1.png",
+				"drawable/call_grey.png",
+				"drawable/member_graphicstatistics.png",
+				"drawable/back.png",
+				"drawable/picicon.png",
+				"drawable/tb_right.png",
+				"drawable/tab_list_button_nor.png",
+				"drawable/question.png",
+				"drawable/electronic_fence.png",
+				"drawable/but_nuchoose.png",
+				"drawable/my_balance.png",
+				"drawable/star_half.png",
+				"drawable/bg_login.png",
+				"drawable/serviceslist.png",
+				"drawable/fg_icon2_select.png",
+				"drawable/call_org.png",
+				"drawable/exit.png",
+				"drawable/appointment_address_icon.png",
+				"drawable/patrol_button_delete.png",
+				"drawable/minus.png",
+				"drawable/pay_money.png",
+				"drawable/wait.png",
+				"drawable/scan_grey.png",
+				"drawable/statues_002.png",
+				"drawable/first_icon1.png",
+				"drawable/first_call.png",
+				"demo.html",
+				"drawable/fund_reason.png",
+				"drawable/fg_icon1_normal.png",
+				"drawable/tabbar_button_taskremind_normal.png",
+				"drawable/fg_icon4_select.png",
+				"drawable/statues_003.png",
+				"css/mui.css",
+				"drawable/my_addressmanagement.png",
+				"drawable/leftbar_button_performance_normal.png",
+				"drawable/appointment_time_icon.png",
+				"drawable/icon_addpic_unfocused.png",
+				"drawable/location.png",
+				"drawable/goods_collection_sel.png",
+				"drawable/my_sync.png",
+				"drawable/physical_examination_flow5.png",
+				"drawable/hot_activity.png",
+				"drawable/enter_reservation.png",
+				"drawable/my_icon3.png",
+				"drawable/my_notice.png",
+				"drawable/set_button_red.png",
+				"drawable/first_photo3.png",
+				"drawable/position_button_history_sel.png",
+				"drawable/address_edit.png",
+				"drawable/my_scanning.png",
+				"drawable/member_bloodpressure.png",
+				"drawable/shopping_circle.png",
+				"drawable/edit.png",
+				"drawable/tabbar_my_nor.png",
+				"drawable/tabbar_button_finished_normal.png",
+				"drawable/noselected.png",
+				"drawable/position_button_rescue_sel.png",
+				"drawable/yubei.png",
+				"drawable/tab_list_button_sel.png",
+				"drawable/life_icon_bloodpressure.png",
+				"drawable/my_update.png",
+				"drawable/leftbar_button_active_nor.png",
+				"drawable/home_address.png",
+				"drawable/call_icon2.png",
+				"drawable/bg_item_coupon.png",
+				"drawable/appointment_thedoornamber.png",
+				"drawable/life_icon_pulse.png",
+				"drawable/nav_button_save_normal.png",
+				"drawable/tabbar_button_finished_selected.png",
+				"drawable/combo_set.png",
+				"drawable/asc.png",
+				"drawable/qiandao.png",
+				"drawable/signsuccess.png",
+				"drawable/set_button_choose_sel.png",
+				"drawable/goods_collection_un.png",
+				"drawable/home_top_bg.png",
+				"drawable/tab_member_button_nor.png",
+				"drawable/leftbar_icon_name.png",
+				"css/style.css",
+				"drawable/my_icon10.png",
+				"drawable/tabbar_home_selected.png",
+				"drawable/tabbar_active_sel.png",
+				"drawable/tb_left.png",
+				"drawable/today_changecheck.png",
+				"drawable/icon3.png",
+				"drawable/first_scan.png",
+				"drawable/tabbar_order_nor.png",
+				"drawable/nav_button_allsearch.png",
+				"drawable/today_check.png",
+				"drawable/appointment_name.png",
+				"drawable/failedload_goods.png",
+				"drawable/nodata_taskremind.png",
+				"drawable/edit_choose.png",
+				"drawable/fg_icon4_normal.png"
+			]
+		}
+	}
+}

@@ -1,0 +1,74 @@
+.ui-page-login,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.mui-content {
+	height: 100%;
+}
+
+.userlist {
+	padding: 9px 18px;
+	line-height: 22px;
+	font-size: 14px;
+	/*border-bottom: 1px solid #faf6f6;*/
+	/*color: #433e3e;*/
+	white-space: nowrap;
+}
+
+.usericon {
+	width: 22px!important;
+	height: 22px !important;
+	margin-right: 5px !important;
+}
+
+.userlist.mui-table-view-cell:after {
+	height: 0 !important;
+}
+
+.usericonli {
+	margin-left: -3px;
+}
+
+.addresslist {
+	padding: 9px 1px;
+	line-height: 22px;
+	font-size: 14px;
+	/*border-bottom: 1px solid #faf6f6;*/
+	/*color: #433e3e;*/
+	white-space: nowrap;
+}
+
+.mui-row.mui-fullscreen>[class*="mui-col-"] {
+	height: 100%;
+}
+
+.mui-col-xs-3,
+.mui-control-content {
+	overflow-y: auto;
+	height: 100%;
+}
+
+.mui-segmented-control .mui-control-item {
+	line-height: 50px;
+	width: 100%;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+	background-color: #fff;
+}
+.serviceCol{
+	color: red;
+}
+.footer {
+				right: 0;
+				bottom: 0;
+				width: 100%;
+				position: fixed;
+				text-align: right;
+				font-weight: bold;
+				border: solid 1px #ccc;
+			}
