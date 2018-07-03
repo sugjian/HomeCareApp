@@ -13,25 +13,56 @@
 
 		<body>
 			<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #999999;"></a>
-			<h1 class="mui-title">选择地址</h1>
-			<a  href="manageAddress.html" style="color: #000000;font-size: 16px;">
-			<button class="mui-btn mui-btn-grey mui-btn-link mui-pull-right"style="color: #000000;">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #ffffff;"></a>
+				<h1 class="mui-title">选择地址</h1>
+				<a href="manageAddress.html" style="color: #000000;font-size: 16px;">
+					<button class="mui-btn mui-btn-grey mui-btn-link mui-pull-right" style="color: #ffffff;">
 					管理
 			</button></a>
-		</header>
+			</header>
 			<div class="mui-content">
-				<ul class="mui-table-view">
-					<li class="mui-table-view-cell">
+				<ul class="mui-table-view" id="choiceAdd">
+					<!--<li class="mui-table-view-cell">
 					<div class="mui-slider-handle">
 						北京市大栅栏街道延寿街87号
 					<div class="addresslist">苏长城 18610897716  [超出服务范围]</div>
 					</div>
-				</li>
+				</li>-->
 				</ul>
 			</div>
 			<script src="../js/mui.min.js"></script>
 			<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+			<script type="text/javascript" src="../js/app.js" ></script>
+			<script type="text/javascript">
+				$(function() {
+					$.ajax({
+						type: "get",
+						url: appUrl + "api/Address?residentID=22",
+						dataType: "json",
+						contentType: "application/json",
+						timeout: 8000,
+						async: true,
+						data: "",
+						success: function(data) {
+							console.log(JSON.stringify(data));
+							if(data.ResultCode == "0") {
+								$.each(data.Data, function(i, item) {
+									$("#choiceAdd").append('<li class="mui-table-view-cell">' +
+										'<div class="mui-slider-handle" id="'+item.AddressID+'">' + item.City + item.Address +
+										'<div class="addresslist">' + item.Name + '<span style="margin-left:25px">' + item.Phone + '</span></div></div></li>');
+										$("#"+item.AddressID).click(function(){
+											window.history.go(-1);
+											localStorage.setItem("cityaddress",item.City+item.Address);
+										})
+								});
+							}
+						},
+						error: function() {
+
+						}
+					});
+				})
+			</script>
 		</body>
 
 </html>

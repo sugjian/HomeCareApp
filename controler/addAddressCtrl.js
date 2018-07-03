@@ -8,7 +8,7 @@ app.controller('addressController', ['$scope', '$timeout', function($scope, $tim
 	document.getElementById("selectCity").addEventListener('tap', function() {
 		mui.openWindow({
 			id: 'city',
-			url: 'city.html',
+			url: 'choice_city.html',
 			extras: {
 				fromId: 'add',
 				index_home:'address'
@@ -20,7 +20,7 @@ app.controller('addressController', ['$scope', '$timeout', function($scope, $tim
 		});
 	})
 	//选择城市列表
-	document.addEventListener('changeLoc', function(event) {
+	document.addEventListener('curCity', function(event) {
 //							var detail = JSON.parse(event.detail);//包含地址详细信息
 		document.getElementById("curCity").innerText = event.detail.name;
 	}, false)

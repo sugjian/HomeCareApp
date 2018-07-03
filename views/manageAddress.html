@@ -13,12 +13,12 @@
 
 		<body>
 			<header class="mui-bar mui-bar-nav">
-				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #999999;"></a>
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #ffffff;"></a>
 				<h1 class="mui-title">地址管理</h1>
 			</header>
 			<div class="mui-content">
 				<ul class="mui-table-view" id="deleteAdr">
-					<li class="mui-table-view-cell">
+					<!--<li class="mui-table-view-cell">
 						<div class="mui-slider-right mui-disabled">
 							<a class="mui-btn mui-btn-red">删除</a>
 						</div>
@@ -26,18 +26,42 @@
 							北京市大栅栏街道延寿街87号
 							<div class="addresslist">苏长城 18610897716 [超出服务范围]</div>
 						</div>
-					</li>
+					</li>-->
 				</ul>
 			</div>
 			<div class="footer">
-				<a  href="addAddress.html" style="color: #ffffff;font-size: 20px;">
-				<button type="button" class="mui-btn-block mui-btn-warning mui-icon mui-icon-plus">添加新地址</button>
+				<a href="addAddress.html">
+					<button class="mui-btn-block mui-btn-sevice mui-icon mui-icon-plus">添加新地址</button>
 				</a>
 			</div>
 			<script src="../js/mui.min.js"></script>
 			<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+			<script type="text/javascript" src="../js/app.js" ></script>
 			<script>
 				$(function() {
+					$.ajax({
+						type: "get",
+						url: appUrl + "api/Address?residentID=22",
+						dataType: "json",
+						contentType: "application/json",
+						timeout: 8000,
+						async: true,
+						data: "",
+						success: function(data) {
+							console.log(JSON.stringify(data));
+							if(data.ResultCode == "0") {
+								$.each(data.Data, function(i, item) {
+									$("#deleteAdr").append('<li class="mui-table-view-cell"><div class="mui-slider-right mui-disabled">' +
+										'<a class="mui-btn mui-btn-red">删除</a></div><div class="mui-slider-handle">' +
+										item.City + item.Address +
+										'<div class="addresslist">' + item.Name + '<span style="margin-left:25px">' + item.Phone + '</span></div></div></li>');
+								});
+							}
+						},
+						error: function() {
+
+						}
+					});
 					mui.init();
 					(function($) {
 						//删除地址
@@ -46,7 +70,7 @@
 							var li = elem.parentNode.parentNode;
 							mui.confirm('确认删除该地址信息？', '提示', btnArray, function(e) {
 								var id = li.getAttribute("id");
-								if (e.index == 0) {
+								if(e.index == 0) {
 									li.parentNode.removeChild(li);
 //									$.ajax({
 //										url: "",

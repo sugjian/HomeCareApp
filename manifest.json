@@ -139,7 +139,8 @@
 			"index.html": {
 				"resources": [],
 				"refer": [
-					"views/order.html"
+					"views/order.html",
+					"views/homeLife.html"
 				],
 				"priority": 0
 			},
@@ -148,15 +149,19 @@
 				"refer": [
 					"views/choice-address.html",
 					"views/detail.html",
-					"index.html"
+					"index.html",
+					"views/homeLife.html",
+					"views/choice-time.html",
+					"views/payment.html"
 				],
 				"priority": 0
 			},
 			"views/manageAddress.html": {
-				"resources": [],
-				"refer": [
-					"views/addAddress.html",
+				"resources": [
 					"views/choice-address.html"
+				],
+				"refer": [
+					"views/addAddress.html"
 				],
 				"priority": 0
 			},
@@ -171,7 +176,8 @@
 				"resources": [],
 				"refer": [
 					"views/city.html",
-					"views/manageAddress.html"
+					"views/manageAddress.html",
+					"views/choice_city.html"
 				],
 				"priority": 0
 			},
@@ -179,6 +185,31 @@
 				"resources": [],
 				"refer": [
 					"views/order.html"
+				],
+				"priority": 0
+			},
+			"views/homeLife.html": {
+				"resources": [],
+				"refer": [
+					"views/order.html",
+					"index.html",
+					"views/payment.html"
+				],
+				"priority": 0
+			},
+			"views/choice-time.html": {
+				"resources": [],
+				"refer": [
+					"views/order.html"
+				],
+				"priority": 0
+			},
+			"views/payment.html": {
+				"resources": [],
+				"refer": [
+					"views/order.html",
+					"views/homeLife.html",
+					"index.html"
 				],
 				"priority": 0
 			}

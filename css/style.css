@@ -9,6 +9,17 @@ body {
 .mui-content {
 	height: 100%;
 }
+.mui-bar-nav~.mui-content {
+	padding-top: 70px
+}
+.mui-bar .mui-icon {
+	padding-top: 35px;
+	padding-bottom: 35px
+}
+.mui-bar .mui-btn {
+	padding-top: 23px;
+	padding-bottom: 23px
+}
 
 .userlist {
 	padding: 9px 18px;
@@ -23,6 +34,13 @@ body {
 	width: 22px!important;
 	height: 22px !important;
 	margin-right: 5px !important;
+}
+
+.payicon {
+	width: 30px!important;
+	height: 30px !important;
+	margin-right: 5px !important;
+	margin-top: 6px !important;
 }
 
 .userlist.mui-table-view-cell:after {
@@ -57,18 +75,61 @@ body {
 	width: 100%;
 }
 
-.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
-	background-color: #fff;
-}
-.serviceCol{
+.serviceCol {
 	color: red;
 }
+
 .footer {
-				right: 0;
-				bottom: 0;
-				width: 100%;
-				position: fixed;
-				text-align: right;
-				font-weight: bold;
-				border: solid 1px #ccc;
-			}
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	position: fixed;
+	text-align: right;
+	font-weight: bold;
+}
+.mui-bar-nav {
+	background: url(../drawable/headline_bg.png);
+	height:70px
+}
+.mui-table-view .mui-media-object {
+	line-height: 80px;
+	max-width: 80px;
+	height: 80px
+}
+.mui-bar .mui-title {
+	color: #ffffff;
+	font-size: 20px;
+    font-weight: 500;
+    line-height: 70px;
+    padding-top: 10px;
+}
+/*.mui-table-view .mui-media,*/
+.mui-table-view .mui-media-body {
+	padding-top: 15px;
+}
+.mui-btn-yuyue{
+	background-color: #00cbe9;
+	border-radius: 10px;
+	border: solid 1px #00cbe9;
+	color: #ffffff;
+}
+.mui-btn-sevice{
+	background-color: #00cbe9;
+	border-radius: 40px;
+	color: #ffffff;
+	font-size: 18px;
+}
+.mui-segmented-control .mui-control-item {
+	border-left: 0;
+}
+.mui-segmented-control {
+	border:0;
+}
+.chtime{
+	float: left;
+	width: 50%;
+	height:100px;
+	text-align: center;
+	line-height: 100px;
+	border:solid 1px #cccccc;
+}

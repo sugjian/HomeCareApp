@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+<head>
+  <meta charset="UTF-8">
+  <title>进度条</title>
+  <script src='js/angular.min.js'></script>
+  <style>
+    .progress{
+      width:400px;
+      border:1px solid #ccc;
+      height: 28px;
+      text-align: center;
+      line-height: 28px;
+      font-weight: bold;
+      color: #fff;
+      overflow: hidden;
+    }
+    .Bar{
+      width:50%;
+      height: 28px;
+      background: #5BC0DE;
+    }
+  </style>
+</head>
+<body ng-controller='progresscontro'>
+  <div class="progress">
+    <div ng-class="['Bar']">
+      <div>60%</div>
+    </div>
+  </div>
+  <script>
+   var app=angular.module('app',[]);
+   app.controller('progresscontro',function($scope){
+     
+   })
+  </script>
+</body>
+</html>

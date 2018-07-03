@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>选择预约时间</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/style.css" />
+	</head>
+
+	<body>
+
+		<style>
+			.mui-control-content {
+				background-color: white;
+				min-height: 585px;
+			}
+			
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+		</style>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #ffffff;"></a>
+			<h1 class="mui-title">选择预约时间</h1>
+		</header>
+		<div class="mui-content" ng-cloak>
+			<div style="padding: 10px;">
+				<div id="timeControl" class="mui-segmented-control">
+					<!--<a class="mui-control-item mui-active" href="#item1">今天<br />5月31日</a>
+					<a class="mui-control-item" href="#item2">明天<br />5月31日</a>
+					<a class="mui-control-item" href="#item3">基础项目</a>
+					<a class="mui-control-item" href="#item4">基础项目</a>
+					<a class="mui-control-item" href="#item5">基础项目</a>-->
+				</div>
+			</div>
+
+			<div id="item1" class="mui-control-content mui-active">
+				<ul class="mui-table-view mui-table-view-resize" id="item1ul">
+					<!--<li class="mui-table-view-cell chtime">
+						8:00-10:00
+					</li>
+					<li class="mui-table-view-cell chtime">
+						10:00-11:00
+					</li>
+					<li class="mui-table-view-cell chtime">
+						13:00-15:00
+					</li>
+					<li class="mui-table-view-cell chtime">
+						15:00-23:00
+					</li>-->
+				</ul>
+
+			</div>
+
+			<div id="item2" class="mui-control-content">
+				<ul class="mui-table-view mui-table-view-resize" id="item2ul">
+					<!--<li class="mui-table-view-cell chtime">
+						8:00-10:00
+					</li>
+					<li class="mui-table-view-cell chtime">
+						10:00-11:00
+					</li>
+					<li class="mui-table-view-cell chtime">
+						13:00-15:00
+					</li>
+					<li class="mui-table-view-cell chtime">
+						15:00-23:00
+					</li>-->
+				</ul>
+			</div>
+			<div id="item3" class="mui-control-content">
+				<ul class="mui-table-view mui-table-view-resize" id="item3ul">
+					<!--<li class="mui-table-view-cell chtime">
+						8:00-10:00
+					</li>
+					<li class="mui-table-view-cell chtime">
+						10:00-11:00
+					</li>
+					<li class="mui-table-view-cell chtime">
+						13:00-15:00
+					</li>
+					<li class="mui-table-view-cell chtime">
+						15:00-23:00
+					</li>-->
+				</ul>
+			</div>
+			<div id="item4" class="mui-control-content">
+				<ul class="mui-table-view mui-table-view-resize" id="item4ul">
+					<!--<li class="mui-table-view-cell chtime">
+						8:00-10:00
+					</li>
+					<li class="mui-table-view-cell chtime">
+						10:00-11:00
+					</li>
+					<li class="mui-table-view-cell chtime">
+						13:00-15:00
+					</li>
+					<li class="mui-table-view-cell chtime">
+						15:00-23:00
+					</li>-->
+				</ul>
+			</div>
+			<div id="item5" class="mui-control-content">
+				<ul class="mui-table-view mui-table-view-resize" id="item5ul">
+					<!--<li class="mui-table-view-cell chtime">
+						8:00-10:00
+					</li>
+					<li class="mui-table-view-cell chtime">
+						10:00-11:00
+					</li>
+					<li class="mui-table-view-cell chtime">
+						13:00-15:00
+					</li>
+					<li class="mui-table-view-cell chtime">
+						15:00-23:00
+					</li>-->
+				</ul>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript">
+			var myDate = new Date;
+			var year = myDate.getFullYear(); //获取当前年
+			var yue = myDate.getMonth() + 1; //获取当前月
+			var date = myDate.getDate(); //获取当前日
+			var h = myDate.getHours(); //获取当前小时数(0-23)
+			var m = myDate.getMinutes(); //获取当前分钟数(0-59)
+			var s = myDate.getSeconds(); //获取当前秒
+			console.log(year + '-' + yue + '-' + date);
+			var weekday = new Array(7)
+			weekday[0] = "周末";
+			weekday[1] = "周一";
+			weekday[2] = "周二";
+			weekday[3] = "周三";
+			weekday[4] = "周四";
+			weekday[5] = "周五";
+			weekday[6] = "周六";
+			console.log(weekday[myDate.getDay()]) //返回当前时间是周几
+			var s1 = (myDate.getMonth() + 1) + "月" + myDate.getDate() + "日";
+			//明天的时间
+			myDate.setDate(myDate.getDate() + 1);
+			var s2 = (myDate.getMonth() + 1) + "月" + myDate.getDate() + "日";
+			var myDate1 = new Date;
+			myDate1.setDate(myDate1.getDate() + 2);
+			var s3 = (myDate1.getMonth() + 1) + "月" + myDate1.getDate() + "日";
+			var week3 = weekday[myDate1.getDay()];
+			var myDate2 = new Date;
+			myDate2.setDate(myDate2.getDate() + 3);
+			var s4 = (myDate2.getMonth() + 1) + "月" + myDate2.getDate() + "日";
+			var week4 = weekday[myDate2.getDay()];
+			var myDate3 = new Date;
+			myDate3.setDate(myDate3.getDate() + 4);
+			var s5 = (myDate3.getMonth() + 1) + "月" + myDate3.getDate() + "日";
+			var week5 = weekday[myDate3.getDay()];
+			var myDate4 = new Date;
+			myDate4.setDate(myDate4.getDate() + 5);
+			var s6 = (myDate4.getMonth() + 1) + "月" + myDate4.getDate() + "日";
+			var week6 = weekday[myDate4.getDay()];
+
+			var myDate = new Date;
+			var toaday = myDate.getFullYear() + '-' + (myDate.getMonth() + 1) + "-" + myDate.getDate();
+			var data = {
+				"orgid": 3,
+				"queryDate": toaday
+			};
+			$.ajax({
+				type: "get",
+				url: appUrl + "api/ServiceOrder/GetEmpDatePlan",
+				dataType: "json",
+				contentType: "application/json",
+				timeout: 8000,
+				async: true,
+				data: data,
+				success: function(data) {
+					console.log(JSON.stringify(data));
+					if(data.ResultCode == "0") {
+						if(!data.Data.EmpPlanDateList.length) {
+							$("#item1ul").append('<li class="mui-table-view-cell chtime">无预约时间</div>');
+						} else {
+							$.each(data.Data.EmpPlanDateList, function(i, item) {
+								$("#item1ul").append('<li class="mui-table-view-cell chtime" id="' + data.Data.BookDate+item.PNCID + '">' +
+									item.StartTime + '-' + item.EndTime + '</li>');
+								$("#" +data.Data.BookDate+ item.PNCID).click(function() {
+									window.history.go(-1);
+									localStorage.setItem("chotime", toaday + " " + item.StartTime + '-' + item.EndTime);
+								})
+							});
+
+						}
+					}
+				},
+				error: function() {
+
+				}
+			});
+
+			var myDate1 = new Date;
+			var tom = myDate1.getFullYear() + '-' + (myDate1.getMonth() + 1) + "-" + (myDate1.getDate() + 1);
+			var data = {
+				"orgid": 3,
+				"queryDate": tom
+			};
+			$.ajax({
+				type: "get",
+				url: appUrl + "api/ServiceOrder/GetEmpDatePlan",
+				dataType: "json",
+				contentType: "application/json",
+				timeout: 8000,
+				async: true,
+				data: data,
+				success: function(data) {
+					console.log(JSON.stringify(data));
+					if(data.ResultCode == "0") {
+						if(!data.Data.EmpPlanDateList.length) {
+							$("#item2ul").append('<li class="mui-table-view-cell chtime">无预约时间</div>');
+						} else {
+							$.each(data.Data.EmpPlanDateList, function(i, item) {
+								$("#item2ul").append('<li class="mui-table-view-cell chtime" id="' + data.Data.BookDate+item.PNCID + '">' +
+									item.StartTime + '-' + item.EndTime + '</li>');
+								$("#" +data.Data.BookDate+ item.PNCID).click(function() {
+									window.history.go(-1);
+									localStorage.setItem("chotime", tom + " " + item.StartTime + '-' + item.EndTime);
+								})
+							});
+						}
+					}
+				},
+				error: function() {
+
+				}
+			});
+			var myDate2 = new Date;
+			var hou = myDate2.getFullYear() + '-' + (myDate2.getMonth() + 1) + "-" + (myDate2.getDate() + 2);
+			var data = {
+				"orgid": 3,
+				"queryDate": hou
+			};
+			$.ajax({
+				type: "get",
+				url: appUrl + "api/ServiceOrder/GetEmpDatePlan",
+				dataType: "json",
+				contentType: "application/json",
+				timeout: 8000,
+				async: true,
+				data: data,
+				success: function(data) {
+					console.log(JSON.stringify(data));
+					if(data.ResultCode == "0") {
+						if(!data.Data.EmpPlanDateList.length) {
+							$("#item3ul").append('<li class="mui-table-view-cell chtime">无预约时间</div>');
+						} else {
+							$.each(data.Data.EmpPlanDateList, function(i, item) {
+								$("#item3ul").append('<li class="mui-table-view-cell chtime" id="' + data.Data.BookDate+item.PNCID + '">' +
+									item.StartTime + '-' + item.EndTime + '</li>');
+								$("#" +data.Data.BookDate+ item.PNCID).click(function() {
+									window.history.go(-1);
+									localStorage.setItem("chotime", hou + " " + item.StartTime + '-' + item.EndTime);
+								})
+							});
+
+						}
+					}
+				},
+				error: function() {
+
+				}
+			});
+			var myDate3 = new Date;
+			var dhou = myDate3.getFullYear() + '-' + (myDate3.getMonth() + 1) + "-" + (myDate3.getDate() + 3);
+			var data = {
+				"orgid": 3,
+				"queryDate": dhou
+			};
+			$.ajax({
+				type: "get",
+				url: appUrl + "api/ServiceOrder/GetEmpDatePlan",
+				dataType: "json",
+				contentType: "application/json",
+				timeout: 8000,
+				async: true,
+				data: data,
+				success: function(data) {
+					console.log(JSON.stringify(data));
+					if(data.ResultCode == "0") {
+						if(!data.Data.EmpPlanDateList.length) {
+							$("#item4ul").append('<li class="mui-table-view-cell chtime">无预约时间</div>');
+						} else {
+							$.each(data.Data.EmpPlanDateList, function(i, item) {
+								$("#item4ul").append('<li class="mui-table-view-cell chtime" id="' + data.Data.BookDate+item.PNCID + '">' +
+									item.StartTime + '-' + item.EndTime + '</li>');
+								$("#" +data.Data.BookDate+ item.PNCID).click(function() {
+									window.history.go(-1);
+									localStorage.setItem("chotime", dhou + " " + item.StartTime + '-' + item.EndTime);
+								})
+							});
+
+						}
+					}
+				},
+				error: function() {
+
+				}
+			});
+			var myDate4 = new Date;
+			var ddhou = myDate4.getFullYear() + '-' + (myDate4.getMonth() + 1) + "-" + (myDate4.getDate() + 4);
+			var data = {
+				"orgid": 3,
+				"queryDate": ddhou
+			};
+			$.ajax({
+				type: "get",
+				url: appUrl + "api/ServiceOrder/GetEmpDatePlan",
+				dataType: "json",
+				contentType: "application/json",
+				timeout: 8000,
+				async: true,
+				data: data,
+				success: function(data) {
+					console.log(JSON.stringify(data));
+					if(data.ResultCode == "0") {
+						if(!data.Data.EmpPlanDateList.length) {
+							$("#item5ul").append('<li class="mui-table-view-cell chtime">无预约时间</div>');
+						} else {
+							$.each(data.Data.EmpPlanDateList, function(i, item) {
+								$("#item5ul").append('<li class="mui-table-view-cell chtime" id="' + data.Data.BookDate+item.PNCID + '">' +
+									item.StartTime + '-' + item.EndTime + '</li>');
+								$("#" +data.Data.BookDate+ item.PNCID).click(function() {
+									window.history.go(-1);
+									localStorage.setItem("chotime", ddhou + " " + item.StartTime + '-' + item.EndTime);
+								})
+							});
+
+						}
+					}
+				},
+				error: function() {
+
+				}
+			});
+
+			$(function() {
+				$("#timeControl").append('<a class="mui-control-item" href="#item1">今天<br />' + s1 + '</a>' +
+					'<a class="mui-control-item" href="#item2">明天<br />' + s2 + '</a>' +
+					'<a class="mui-control-item" href="#item3">' + week3 + '<br />' + s3 + '</a>' +
+					'<a class="mui-control-item" href="#item4">' + week4 + '<br />' + s4 + '</a>' +
+					'<a class="mui-control-item" href="#item5">' + week5 + '<br />' + s5 + '</a>')
+				var timeControl = document.getElementById('timeControl');
+				//默认选中第一个
+				timeControl.querySelector('.mui-control-item').classList.add('mui-active');
+			})
+		</script>
+	</body>
+
+</html>

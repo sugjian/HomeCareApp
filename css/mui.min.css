@@ -1366,7 +1366,7 @@ input[type=submit]:enabled:active {
 }
 
 .mui-bar-tab .mui-tab-item .mui-icon~.mui-tab-label {
-	font-size: 11px;
+	font-size: 16px;
 	display: block;
 	overflow: hidden;
 	text-overflow: ellipsis
@@ -2945,7 +2945,7 @@ select:focus {
 }
 
 .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
-	color: #007aff;
+	color: #00cbe9;
 	border-bottom: 2px solid #007aff;
 	background: 0 0
 }
@@ -3710,7 +3710,7 @@ body>.mui-progressbar {
 }
 
 .mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
-	border-bottom: 0
+	border-bottom: solid 3px #00cbe9;
 }
 
 .mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {

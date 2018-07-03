@@ -7,19 +7,26 @@
 	},
 	"index.html": {
 		"refer": [
-			"views/order.html"
+			"views/order.html",
+			"views/homeLife.html"
 		]
 	},
 	"views/order.html": {
 		"refer": [
 			"views/choice-address.html",
 			"views/detail.html",
-			"index.html"
+			"index.html",
+			"views/homeLife.html",
+			"views/choice-time.html",
+			"views/payment.html"
 		]
 	},
 	"views/manageAddress.html": {
 		"refer": [
 			"views/addAddress.html",
+			"views/choice-address.html"
+		],
+		"resources": [
 			"views/choice-address.html"
 		]
 	},
@@ -34,12 +41,32 @@
 	"views/addAddress.html": {
 		"refer": [
 			"views/city.html",
-			"views/manageAddress.html"
+			"views/manageAddress.html",
+			"views/choice_city.html"
 		]
 	},
 	"views/detail.html": {
 		"refer": [
 			"views/order.html"
+		]
+	},
+	"views/homeLife.html": {
+		"refer": [
+			"views/order.html",
+			"index.html",
+			"views/payment.html"
+		]
+	},
+	"views/choice-time.html": {
+		"refer": [
+			"views/order.html"
+		]
+	},
+	"views/payment.html": {
+		"refer": [
+			"views/order.html",
+			"views/homeLife.html",
+			"index.html"
 		]
 	}
 }

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>居家生活</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/style.css" />
+	</head>
+
+	<body>
+
+		<style>
+			.mui-control-content {
+				background-color: white;
+			}
+			
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+		</style>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" id="comeback" style="color: #ffffff;"></a>
+			<h1 class="mui-title">居家生活</h1>
+		</header>
+		<div class="mui-content mui-row mui-fullscreen">
+			<div class="mui-col-xs-3" id="slider">
+				<div id="control" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+					<!--<a class="mui-control-item mui-active" href="#content1">商品体验类</a>
+					<a class="mui-control-item" href="#content2">生活服务类</a>
+					<a class="mui-control-item" href="#content3">健康保健类</a>
+					<a class="mui-control-item" href="#content4">便民服务</a>-->
+				</div>
+			</div>
+			<div id="controlContents" class="mui-col-xs-9" style="border-left: 1px solid #c8c7cc;">
+				<!--<div id="content1" class="mui-control-content mui-active">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">商品体验类</li>
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell userlist">
+								<img class="mui-media-object mui-pull-left head-img" id="head-img" src="../drawable/first_photo4.png">
+								<div class="mui-media-body">
+									渐进式等张训练器
+									<p class='mui-ellipsis'><span class="serviceCol">0.0</span>元/次</p>
+								</div>
+								<span class="mui-badge mui-badge-inverted"><button class="mui-btn-blue">预约</button></span>
+							</li>
+							<li class="mui-table-view-cell userlist">
+								<img class="mui-media-object mui-pull-left head-img" id="head-img" src="../drawable/first_photo4.png">
+								<div class="mui-media-body">
+									8轮足底按摩器
+									<p class='mui-ellipsis'><span class="serviceCol">0.0</span>元/次</p>
+								</div>
+								<span class="mui-badge mui-badge-inverted"><button class="mui-btn-blue">预约</button></span>
+							</li>
+						</ul>
+					</ul>
+				</div>
+				<div id="content2" class="mui-control-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">生活服务类</li>
+						<li class="mui-table-view-cell userlist">
+							<img class="mui-media-object mui-pull-left head-img" id="head-img" src="../drawable/first_photo4.png">
+							<div class="mui-media-body">
+								家庭保洁
+								<p class='mui-ellipsis'><span class="serviceCol">50.0</span>元/次</p>
+							</div>
+							<span class="mui-badge mui-badge-inverted"><button class="mui-btn-blue">预约</button></span>
+						</li>
+					</ul>
+				</div>
+				<div id="content3" class="mui-control-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">健康保养类</li>
+						<li class="mui-table-view-cell userlist">
+							<img class="mui-media-object mui-pull-left head-img" id="head-img" src="../drawable/first_photo4.png">
+							<div class="mui-media-body">
+								上门体检
+								<p class='mui-ellipsis'><span class="serviceCol">5.0</span>元/次</p>
+							</div>
+							
+							<span class="mui-badge mui-badge-inverted"><button class="mui-btn-blue">预约</button></span>
+						</li>
+						<li class="mui-table-view-cell userlist">
+							<img class="mui-media-object mui-pull-left head-img" id="head-img" src="../drawable/first_photo4.png">
+							<div class="mui-media-body">
+								足底按摩
+								<p class='mui-ellipsis'><span class="serviceCol">30.0</span>元/次</p>
+							</div>
+							<span class="mui-badge mui-badge-inverted"><button class="mui-btn-blue">预约</button></span>
+						</li>
+					</ul>
+				</div>
+				<div id="content4" class="mui-control-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">便民服务</li>
+						<li class="mui-table-view-cell userlist">
+							<img class="mui-media-object mui-pull-left head-img" id="head-img" src="../drawable/first_photo4.png">
+							<div class="mui-media-body">
+								修水龙头
+								<p class='mui-ellipsis'><span class="serviceCol">6.0</span>元/次</p>
+							</div>
+							<span class="mui-badge mui-badge-inverted"><button class="mui-btn-blue">预约</button></span>
+						</li>
+					</ul>
+				</div>-->
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script>
+			$(function() {
+				var stationId = localStorage.getItem("stationId");
+				var orgId = localStorage.getItem("orgId");
+				$.ajax({
+					type: "get",
+					url: appUrl + "api/Service/GetServiceCategory?orgId="+orgId+"&sibelong=1",
+					dataType: "json",
+					contentType: "application/json",
+					timeout: 8000,
+					async: true,
+					data: "",
+					success: function(data) {
+						if(data.ResultCode == "0") {
+							console.log(JSON.stringify(data));
+							$.each(data.Data, function(i, item) {
+								$("#control").append('<a class="mui-control-item mui-ellipsis-2" href="#item' + item.ServiceItemCategoryID + '">' +
+									item.SICName +
+									'</a>');
+								$("#controlContents").append('<div id="item' + item.ServiceItemCategoryID + '" class="mui-control-content"><ul class="mui-table-view" id="it' + item.ServiceItemCategoryID + '"></ul></div>');
+							});
+							var control = document.getElementById('control');
+							var controlContents = document.getElementById('controlContents');
+							//默认选中第一个
+							control.querySelector('.mui-control-item').classList.add('mui-active');
+							controlContents.querySelector('.mui-control-content').classList.add('mui-active');
+						}
+						var data = {
+							"pageSize": "0",
+							"data": {
+								"organizationID": orgId,
+								"IsOnlyShowThisSite": 1,
+								"stationId": stationId,
+								"SIBelong": "1"
+							},
+							"currentPage": "1"
+						}
+						$.ajax({
+							type: "post",
+							url: appUrl + "api/Service",
+							dataType: "json",
+							contentType: "application/json",
+							timeout: 8000,
+							async: true,
+							data: JSON.stringify(data),
+							success: function(data) {
+								console.log(JSON.stringify(data))
+								if(data.ResultCode == "0") {
+									$.each(data.Data, function(i, item) {
+										if(!item.Remark){
+											item.Remark = "";
+										}
+										if(!item.UnitName){
+											item.UnitName = "";
+										}
+										if(!item.PhotoPath){
+											item.PhotoPath = "Uploads/ServiceItemPhoto/default.png";
+										}
+										html = '<li class="mui-table-view-cell userlist"><img class="mui-media-object mui-pull-left" src="' + appUrl + '' + item.PhotoPath + '">' +
+											'<div class="mui-media-body">' + item.SIName + '<div class="mui-ellipsis-2" style="color: #666666;width:175px">' + item.Remark +
+											'</div><p class="mui-ellipsis"><span class="serviceCol">' + item.SumPrice + '</span>' + item.UnitName +
+											'</p></div><span class="mui-badge mui-badge-inverted"><button class="mui-btn-yuyue" id="' + item.ServiceItemID + '">预约</button></span></li>'
+										$("#it" + item.ServiceItemCategoryID).append(html);
+										$("#" + item.ServiceItemID).click(function() {
+											window.location.href = "order.html";
+											localStorage.setItem("SIName", item.SIName);
+											localStorage.setItem("SIType", item.SIType);
+											localStorage.setItem("ServiceItemID", item.ServiceItemID);
+											localStorage.setItem("SumPrice", item.SumPrice);
+											localStorage.setItem("SINo", item.SINo);
+										})
+									});
+								}
+							},
+							error: function() {
+
+							}
+						});
+					},
+					error: function() {
+
+					}
+
+				});
+				
+				$("#comeback").click(function(){
+					window.location.href = "../index.html";
+				})
+
+				mui.init({
+					swipeBack: false
+				});
+//				(function($) {
+//					$('.mui-scroll-wrapper').scroll({
+//						indicators: true //是否显示滚动条
+//					});
+//					var item2 = document.getElementById('item7');
+//					var item3 = document.getElementById('item8');
+//					var item4 = document.getElementById('item16');
+//					document.getElementById('slider').addEventListener('slide', function(e) {
+//						if(e.detail.slideNumber === 1) {
+//							if(item2.querySelector('.mui-loading')) {
+//								setTimeout(function() {
+//									item2.querySelector('.mui-scroll').innerHTML = html2;
+//								}, 500);
+//							}
+//						} else if(e.detail.slideNumber === 2) {
+//							if(item3.querySelector('.mui-loading')) {
+//								setTimeout(function() {
+//									item3.querySelector('.mui-scroll').innerHTML = html3;
+//								}, 500);
+//							}
+//						} else if(e.detail.slideNumber === 3) {
+//							if(item4.querySelector('.mui-loading')) {
+//								setTimeout(function() {
+//									item4.querySelector('.mui-scroll').innerHTML = html4;
+//								}, 500);
+//							}
+//						}
+//					});
+//				})(mui);
+			})
+		</script>
+
+	</body>
+
+</html>

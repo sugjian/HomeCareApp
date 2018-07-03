@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>居家生活</title>
+		<title>首页</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -13,102 +13,172 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #999999;"></a>
-			<h1 class="mui-title">居家生活</h1>
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" id="backApp" style="color: #ffffff;"></a>
+			<h1 class="mui-title">康美养老</h1>
 		</header>
-		<div class="mui-content mui-row mui-fullscreen">
-			<div class="mui-col-xs-3">
-				<div id="segmentedControls" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
-					<a class="mui-control-item mui-active" href="#content1">商品体验类</a>
-					<a class="mui-control-item" href="#content2">生活服务类</a>
-					<a class="mui-control-item" href="#content3">健康保健类</a>
-					<a class="mui-control-item" href="#content4">便民服务</a>
-				</div>
+		<!--<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" href="#item1">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="#item2">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">医</span>
+			</a>
+			<a class="mui-tab-item" href="#item3">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">康</span>
+			</a>
+			<a class="mui-tab-item mui-active" href="#item4">
+				<span class="mui-icon mui-icon-gear"></span>
+				<span class="mui-tab-label">养</span>
+			</a>
+			<a class="mui-tab-item" href="#item5">
+				<span class="mui-icon mui-icon-gear"></span>
+				<span class="mui-tab-label">服务</span>
+			</a>
+		</nav>-->
+		<div class="mui-content">
+			<div id="item1" class="mui-control-content">
+				<div class="title">首页</div>
 			</div>
-			<div id="segmentedControlContents" class="mui-col-xs-9" style="border-left: 1px solid #c8c7cc;">
-				<div id="content1" class="mui-control-content mui-active">
-					<ul class="mui-table-view">
-						<li class="mui-table-view-cell">商品体验类</li>
-						<ul class="mui-table-view mui-table-view-chevron">
-							<li class="mui-table-view-cell userlist">
-								<img class="mui-media-object mui-pull-left head-img" id="head-img" src="drawable/first_photo4.png">
-								<div class="mui-media-body">
-									渐进式等张训练器
-									<p class='mui-ellipsis'><span class="serviceCol">0.0</span>元/次</p>
-								</div>
-								<span class="mui-badge mui-badge-inverted"><button class="mui-btn-blue">预约</button></span>
-							</li>
-							<li class="mui-table-view-cell userlist">
-								<img class="mui-media-object mui-pull-left head-img" id="head-img" src="drawable/first_photo4.png">
-								<div class="mui-media-body">
-									8轮足底按摩器
-									<p class='mui-ellipsis'><span class="serviceCol">0.0</span>元/次</p>
-								</div>
-								<span class="mui-badge mui-badge-inverted"><button class="mui-btn-blue">预约</button></span>
-							</li>
-						</ul>
-					</ul>
+			<div id="item2" class="mui-control-content">
+				<div class="title">item2</div>
+
+			</div>
+			<div id="item3" class="mui-control-content">
+				<div class="title">item3</div>
+			</div>
+			<div id="item4" class="mui-control-content  mui-active">
+				<div class="mui-slider" id="slider">
+					<div class="mui-slider-group mui-slider-loop">
+						<div class="mui-slider-item">
+							<a href="#"><img src="drawable/banner/banner.png" /></a>
+						</div>
+						<div class="mui-slider-item">
+							<a href="#"><img src="drawable/banner/banner.png" /></a>
+						</div>
+					</div>
 				</div>
-				<div id="content2" class="mui-control-content">
-					<ul class="mui-table-view">
-						<li class="mui-table-view-cell">生活服务类</li>
-						<li class="mui-table-view-cell userlist">
-							<img class="mui-media-object mui-pull-left head-img" id="head-img" src="drawable/first_photo4.png">
+
+				<ul class="mui-table-view" style="margin-top: 10px;">
+					<li class="mui-table-view-cell mui-media">
+						<a href="views/homeLife.html">
+							<img class="mui-media-object mui-pull-left" src="drawable/jujia.png">
 							<div class="mui-media-body">
-								家庭保洁
-								<p class='mui-ellipsis'><span class="serviceCol">50.0</span>元/次</p>
+								居家生活
+								<p class='mui-ellipsis'>各大名医在线，欢迎咨询问诊</p>
 							</div>
-							<span class="mui-badge mui-badge-inverted"><button class="mui-btn-blue">预约</button></span>
-						</li>
-					</ul>
-				</div>
-				<div id="content3" class="mui-control-content">
-					<ul class="mui-table-view">
-						<li class="mui-table-view-cell">健康保养类</li>
-						<li class="mui-table-view-cell userlist">
-							<img class="mui-media-object mui-pull-left head-img" id="head-img" src="drawable/first_photo4.png">
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view" style="margin-top: 10px;">
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="drawable/yizhan.png">
 							<div class="mui-media-body">
-								上门体检
-								<p class='mui-ellipsis'><span class="serviceCol">5.0</span>元/次</p>
+								驿站医养
+								<p class='mui-ellipsis'>各大名医在线，欢迎咨询问诊</p>
 							</div>
-							
-							<span class="mui-badge mui-badge-inverted"><button class="mui-btn-blue">预约</button></span>
-						</li>
-						<li class="mui-table-view-cell userlist">
-							<img class="mui-media-object mui-pull-left head-img" id="head-img" src="drawable/first_photo4.png">
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view" style="margin-top: 10px;">
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="drawable/jiankang.png">
 							<div class="mui-media-body">
-								足底按摩
-								<p class='mui-ellipsis'><span class="serviceCol">30.0</span>元/次</p>
+								健康超市
+								<p class='mui-ellipsis'>各大名医在线，欢迎咨询问诊</p>
 							</div>
-							<span class="mui-badge mui-badge-inverted"><button class="mui-btn-blue">预约</button></span>
-						</li>
-					</ul>
-				</div>
-				<div id="content4" class="mui-control-content">
-					<ul class="mui-table-view">
-						<li class="mui-table-view-cell">便民服务</li>
-						<li class="mui-table-view-cell userlist">
-							<img class="mui-media-object mui-pull-left head-img" id="head-img" src="drawable/first_photo4.png">
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view" style="margin-top: 10px;">
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="drawable/yule.png">
 							<div class="mui-media-body">
-								修水龙头
-								<p class='mui-ellipsis'><span class="serviceCol">6.0</span>元/次</p>
+								文体娱乐
+								<p class='mui-ellipsis'>各大名医在线，欢迎咨询问诊</p>
 							</div>
-							<span class="mui-badge mui-badge-inverted"><button class="mui-btn-blue">预约</button></span>
-						</li>
-					</ul>
-				</div>
+						</a>
+					</li>
+				</ul>
 			</div>
 		</div>
-		<script src="js/mui.min.js"></script>
-		<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
-		<script>
-			$(function(){
-				$(".mui-btn-blue").click(function(){
-					window.location.href="views/order.html";
-				})
-			})
-		</script>
-
 	</body>
 
 </html>
+<script src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script>
+	$(function() {
+		getUrlParams();
+		var uid = localStorage.getItem("uid");
+		if(uid) {
+			uid = uid;
+		} else {
+			uid = "15225593991";
+		}
+		var data = {
+			"uid": uid,
+			"pwd": ""
+		}
+		$.ajax({
+			type: "post",
+			url: appUrl + "api/AuthenticationFree",
+			dataType: "json",
+			contentType: "application/json",
+			timeout: 8000,
+			async: true,
+			data: JSON.stringify(data),
+			success: function(data) {
+				console.log(JSON.stringify(data));
+				localStorage.setItem("stationId", data.Data.Station.StationID);
+				localStorage.setItem("orgId", data.Data.OrgId);
+				localStorage.setItem("loginName", data.Data.LoginName);
+				localStorage.setItem("PersonID", data.Data.PersonID);
+				localStorage.setItem("ResidentID", data.Data.ResidentID);
+			},
+			error: function(error) {
+				console.log(JSON.stringify(error));
+			}
+		});
+
+		//返回到原生界面
+		$("#backApp").click(function() {
+			 try {
+                    HealthBAT.goToBatHome();
+                } catch (e) {
+                   console.info(e);
+                }
+//			var HealthBAT = plus.ios.importClass("navigationController");
+//			HealthBAT.goToBatHome();
+		})
+	})
+	//获取URL里参数
+	function getUrlParams() {
+		var urlinfo = window.location.href; //获取当前页面的url
+		var len = urlinfo.length; //获取url的长度
+		var offset = urlinfo.indexOf("?"); //设置参数字符串开始的位置
+		if(offset == -1) { //判断参数是否存在
+			//document.write("没有指定参数!");
+			//alert("获取数据失败！");
+		} else {
+			var paramInfo = urlinfo.substr(offset + 1, len) //取出参数字符串 这里会获得类似“id=1”这样的字符串
+			var aryVars = paramInfo.split("&"); //对获得的参数字符串按照“=”进行分割
+			for(var i = 0; i < aryVars.length; i++) {
+				var aryPair = aryVars[i].split('=');
+				if(aryPair[0] == "phone") {
+					phone = decodeURI(aryPair[1]);
+					//$("#phone").val(phone);
+					localStorage.setItem("uid", phone);
+				} else {
+					//alert("网络异常！");
+				}
+			}
+		}
+	}
+</script>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/style.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #ffffff;"></a>
+			<h1 class="mui-title">支付方式</h1>
+		</header>
+		<div class="mui-content">
+			<div><img src="../drawable/pay_banner.png" height="200px" width="100%"></div>
+			<div class="mui-scroll">
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell userlist">
+						<img src="../drawable/pay_vip.png" class="mui-media-object mui-pull-left payicon"> 会员卡支付
+						<br />
+						<h5>安全快捷支付</h5>
+						<span class="mui-badge mui-badge-inverted" id="payNet">
+							<img src="../drawable/selected.png" id="payNetImg" width="40px" height="40px" />
+						</span>
+					</li>
+					<li class="mui-table-view-cell userlist">
+						<img src="../drawable/pay_money.png" class="mui-media-object mui-pull-left payicon"> 线下支付
+						<br />
+						<h5>当面结清</h5>
+						<span class="mui-badge mui-badge-inverted" id="payDown">
+							<img src="../drawable/noselected.png" id="payDownImg" width="40px" height="40px" />
+						</span>
+					</li>
+				</ul>
+			</div>
+			<div class="footer">
+				<button class="mui-btn-block mui-btn-sevice" id="commit">确认：￥<span id="totalPrice"></span></button>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script src="../js/mui.min.js"></script>
+<script type="text/javascript" src="../js/angular.min.js"></script>
+<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="../js/app.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var payment = "ResidentCard";
+		$("#payNet").click(function() {
+			if($(this).children().attr("src") == "../drawable/selected.png"){
+			}else{
+				$(this).children().attr("src","../drawable/selected.png");
+				$("#payDownImg").attr("src","../drawable/noselected.png");
+				payment = "ResidentCard";
+			}
+		});
+		$("#payDown").click(function() {
+			if($(this).children().attr("src") == "../drawable/selected.png"){
+			}else{
+				$(this).children().attr("src","../drawable/selected.png");
+				$("#payNetImg").attr("src","../drawable/noselected.png");
+				payment = "Cash";
+			}
+		});
+		var SumPrice = localStorage.getItem("SumPrice");
+		var count = localStorage.getItem("count");
+		var serviceOrderID = localStorage.getItem("ServiceOrderID");
+		$("#totalPrice").text(SumPrice*count);
+		$("#commit").click(function(){
+			alert("支付成功！");
+			window.location.href = "homeLife.html";
+//			var data = {"serviceOrderID":serviceOrderID, "payment":payment};
+//			console.log(JSON.stringify(data))
+//			$.ajax({
+//				type: "get",
+//				url: appUrl + "api/ServiceOrder/OrderSettlement",
+//				dataType: "json",
+//				contentType: "application/json",
+//				timeout: 8000,
+//				async: true,
+//				data: JSON.stringify(data),
+//				success: function(data) {
+//					console.log(JSON.stringify(data));
+//				},
+//				error: function(error) {
+//					console.log(JSON.stringify(error));
+//				}
+//			});
+		})
+	})
+</script>
